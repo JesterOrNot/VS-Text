@@ -11,12 +11,12 @@ fn print_border() {
     // TOP
     print!("\x1b[0;0f");
     print!("\x1b[s");
-    for i in 0..width.0 {
+    for _ in 0..width.0 {
         print!("_\x1b[1C");
     }
     // Left and right
     print!("\x1b[1B\x1b[1000D|\x1b[1000C");
-    for j in 1..height.0 {
+    for _ in 1..height.0 {
         print!("|\x1b[1B\x1b[999D|\x1b[999C");
     }
     print!("\x1b[10000B|");
