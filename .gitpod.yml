@@ -3,4 +3,4 @@ image:
 
 tasks:
   - init: pip3 install -r requirements.txt
-    command: gosh
+    command: tmuxp test1.yml
