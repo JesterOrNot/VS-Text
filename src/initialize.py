@@ -1,8 +1,9 @@
-import libtmux, time
+import libtmux, time, random
 server = libtmux.Server()
-session = server.new_session(session_name="c", )
+the_session_name = chr(random.randint(128,255))
+server.new_session(session_name=the_session_name)
+session = server.find_where({"session_name": the_session_name})
 window = session.attached_window
-pane = window.split_window(attach=True)
-pane.send_keys("ls")
-time.sleep(20)
-session.kill_session()
+pane = window.split_window(attach=False)
+server.attach_session(the_session_name)
+server.kill_server()
