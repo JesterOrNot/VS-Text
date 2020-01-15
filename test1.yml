@@ -4,8 +4,7 @@ windows:
   layout: 11e3,104x13,0,0{22x13,0,0,3,81x13,23,0,4}
   options: {}
   panes:
+  - g++ -o files src/main.cpp && clear && ./files
   - bash
-  - focus: 'true'
-    shell_command: python3.7
   start_directory: /workspace/VS-Text
   window_name: python3.7
